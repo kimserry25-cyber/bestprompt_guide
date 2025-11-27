@@ -123,6 +123,9 @@ const BlockRenderer: React.FC<{ block: ContentBlock }> = ({ block }) => {
 };
 
 const ContentArea: React.FC<ContentAreaProps> = ({ section, nextSection, onNextClick }) => {
+  // Hide next button for Template sections
+  const showNextButton = nextSection && !section.id.startsWith('tmpl-');
+
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 md:px-12 md:py-16">
       <header className="mb-12">
@@ -144,13 +147,13 @@ const ContentArea: React.FC<ContentAreaProps> = ({ section, nextSection, onNextC
       </article>
 
       {/* Next Lesson Button */}
-      {nextSection && (
+      {showNextButton && (
         <div className="mt-16 flex justify-center">
           <button
             onClick={onNextClick}
             className="group flex items-center gap-3 px-8 py-4 bg-brand-600 text-white rounded-full font-bold text-lg shadow-lg hover:bg-brand-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            <span>다음 단계 학습하기: {nextSection.title.split(':')[0]}</span>
+            <span>다음 단계 학습하기: {nextSection!.title.split(':')[0]}</span>
             <ArrowRight className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
@@ -158,7 +161,7 @@ const ContentArea: React.FC<ContentAreaProps> = ({ section, nextSection, onNextC
 
       <div className="mt-16 pt-8 border-t border-gray-100 flex justify-between items-center text-sm text-gray-400">
         <span>Last updated: November 2025</span>
-        <span>Guide ID: {section.id}</span>
+        <span>by Designemer</span>
       </div>
     </div>
   );
