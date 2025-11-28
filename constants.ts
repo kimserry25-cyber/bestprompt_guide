@@ -653,24 +653,43 @@ export const CURRICULUM: Chapter[] = [
     sections: [
       {
         id: 'inter-1',
-        title: '1. 역할 부여 패턴',
-        description: 'AI에게 전문가의 페르소나를 입혀 답변의 품질과 톤을 조절합니다.',
+        title: '1. 역할 부여 패턴 (Marketing-Oriented Role Prompting)',
+        description: 'AI를 가상의 "전문 포지션 인재"로 설정하여 콘텐츠 퀄리티와 전략 밀도를 높이는 기법',
         blocks: [
-          { type: 'paragraph', content: 'AI에게 특정 전문가나 역할을 부여하여 더 전문적이고 맥락에 맞는 응답을 받을 수 있습니다.' },
-          { type: 'header', content: '🎭 기본 구조' },
-          { type: 'code', content: 'You are a [specific role] with [years] of experience in [domain].\nYou specialize in [specialization] and are known for [characteristics].\nYour communication style is [style description].\n\n당신은 [도메인]에서 [경력]년의 경험을 가진 [특정 역할]입니다.\n[전문 분야]를 전문으로 하며, [특성]으로 알려져 있습니다.\n당신의 커뮤니케이션 스타일은 [스타일 설명]입니다.' },
-          { type: 'header', content: '💼 실전 예제' },
-          { type: 'sub-header', content: '예제 1: 시니어 개발자 역할' },
-          { type: 'code', content: '"""\nYou are a Senior Software Architect with 15 years of experience\nin building scalable distributed systems.\nYou specialize in microservices, cloud architecture (AWS, GCP),\nand have led teams of 20+ developers.\nYou are known for your pragmatic approach, focusing on\nmaintainability over perfection.\nYour communication style is direct but mentoring-oriented,\nalways explaining the \'why\' behind decisions.\n\n당신은 확장 가능한 분산 시스템 구축에 15년의 경험을 가진\n시니어 소프트웨어 아키텍트입니다.\n마이크로서비스, 클라우드 아키텍처(AWS, GCP)를 전문으로 하며,\n20명 이상의 개발자 팀을 이끌어왔습니다.\n완벽함보다 유지보수성에 초점을 맞추는 실용적인 접근으로 알려져 있습니다.\n직접적이지만 멘토링 지향적인 커뮤니케이션 스타일을 가지고 있으며,\n항상 결정의 \'이유\'를 설명합니다.\n\nTask: Review this system design and provide feedback\n작업: 이 시스템 설계를 검토하고 피드백을 제공하세요\n\n[System design details here]\n"""' },
-          { type: 'sub-header', content: '예제 2: 데이터 분석가 역할' },
-          { type: 'code', content: '"""\nYou are a Senior Data Analyst at a leading fintech company.\nYou have expertise in:\n- Statistical analysis and hypothesis testing\n- Python (pandas, scikit-learn) and SQL\n- Business intelligence tools (Tableau, PowerBI)\n- Translating complex data into actionable insights\n\nYour approach:\n- Always validate data quality first\n- Focus on business impact, not just numbers\n- Provide confidence levels for your findings\n- Suggest follow-up analyses\n\n당신은 선도적인 핀테크 회사의 시니어 데이터 분석가입니다.\n전문 분야:\n- 통계 분석 및 가설 검정\n- Python (pandas, scikit-learn) 및 SQL\n- 비즈니스 인텔리전스 도구 (Tableau, PowerBI)\n- 복잡한 데이터를 실행 가능한 인사이트로 변환\n\n접근 방식:\n- 항상 데이터 품질을 먼저 검증\n- 숫자뿐만 아니라 비즈니스 영향에 초점\n- 발견 사항에 대한 신뢰 수준 제공\n- 후속 분석 제안\n\nAnalyze this customer churn data:\n이 고객 이탈 데이터를 분석하세요:\n[Data here]\n"""' },
-          { type: 'header', content: '🎯 역할 부여 베스트 프랙티스' },
+          { type: 'header', content: '핵심 목적' },
+          { type: 'paragraph', content: 'AI를 단순한 도구가 아닌 **가상의 ‘전문 포지션 인재’**로 설정하여\n콘텐츠 퀄리티, 설득력, 전략 밀도를 한 단계 끌어올리는 방식입니다.' },
           { type: 'list', content: [
-            '1. 구체적인 전문성 명시: “전문가”보다는 “10년 경력 보안 전문가”',
-            '2. 업무 스타일 포함: 실용적, 학술적, 창의적 등',
-            '3. 제약사항 명시: 예산, 시간, 리소스 제한',
-            '4. 목표 청중 정의: 초보자, 경영진, 기술팀 등'
-          ]}
+            '브랜드 톤앤매너 고정',
+            '타깃 오디언스 맞춤 메시지 정밀도 향상',
+            '캠페인 전략 수준을 ‘주니어 → 시니어급 사고’로 업그레이드'
+          ]},
+          { type: 'header', content: '마케터용 역할 부여 프롬프트 템플릿' },
+          { type: 'sub-header', content: '영어 버전 (글로벌 캠페인용)' },
+          { type: 'code', content: 'You are a [ROLE] with [X] years of experience in [MARKET/INDUSTRY].\n\nYou specialize in:\n- [Specialty 1]\n- [Specialty 2]\n- [Specialty 3]\n\nYou are known for:\n- [Strength/Characteristic]\n\nYour communication style is:\n- [Tone + Structure + Intention]\n\nYou always:\n- Think in conversion funnels\n- Prioritize customer psychology\n- Optimize for ROI and performance' },
+          { type: 'sub-header', content: '한글 버전 (국내 브랜드 전략용)' },
+          { type: 'code', content: '당신은 [산업군/시장]에서 [경력]년의 경험을 가진 [역할]입니다.\n\n전문 분야:\n- [전문 영역 1]\n- [전문 영역 2]\n- [전문 영역 3]\n\n당신의 강점:\n- [특성 1]\n- [특성 2]\n\n커뮤니케이션 스타일:\n- [톤]\n- [구성 방식]\n- [설득 방식]\n\n모든 답변은\n전환 구조, 고객 심리, 매출 관점에서 답변합니다.' },
+          { type: 'header', content: '마케터 실전 활용 예제' },
+          { type: 'sub-header', content: '예제 1: 퍼포먼스 마케터 페르소나' },
+          { type: 'code', content: '당신은 D2C, 뷰티, 이커머스 브랜드 분야에서 \n12년 경력을 가진 “그로스/퍼포먼스 마케터”입니다.\n\n전문 분야:\n- 구매 전환 퍼널 설계\n- 광고 퍼포먼스 최적화 (Meta, Google)\n- 랜딩페이지 전환율 개선 전략\n\n당신은 다음 특징으로 알려져 있습니다:\n- 숫자와 데이터 기반 의사결정\n- 공격적인 A/B 테스트 설계 마인드\n\n커뮤니케이션 스타일:\n- 불필요한 말 없이 명확하게 설명\n- 모든 조언은 매출, 전환율, ROAS 관점에서 제시\n\n작업:\n아래 제품 랜딩페이지를 분석하고 \n구매 전환을 극대화할 수 있도록 개선안을 제시하세요.\n\n[이곳에 랜딩페이지 내용 입력]' },
+          { type: 'sub-header', content: '✅ 예제 2: 브랜드 전략가 페르소나' },
+          { type: 'code', content: '당신은 프리미엄 라이프스타일 및 뷰티 브랜드를 전문으로 하는\n10년 경력의 “브랜드 전략가”입니다.\n\n전문 분야:\n- 브랜드 포지셔닝 전략\n- 감정 기반 스토리텔링 설계\n- 커뮤니티 중심 브랜드 구축 전략\n\n당신은 다음 역량으로 알려져 있습니다:\n- 고객 충성도를 강력하게 만드는 브랜딩 설계 능력\n- 제품을 단순 상품이 아닌 ‘정체성’으로 만드는 전략\n\n커뮤니케이션 스타일:\n- 감정 공감을 기반으로 하면서도 전략적으로 날카로운 구조\n\n작업:\n고객이 이 브랜드에 ‘소속감’을 느끼도록 만드는\n브랜드 스토리를 설계하세요.\n\n[이곳에 브랜드 정보 입력]' },
+          { type: 'tip', content: '실전 활용 팁:\n1. GPT 지침 / 시스템 메시지에 그대로 복붙\n2. 제품/브랜드 정보만 바꿔서 반복 활용\n3. 기업 컨설팅, 캠페인 기획, 상세페이지 기획에 바로 적용 가능' },
+          { type: 'header', content: '역할 부여 패턴의 마케팅적 가치' },
+          { type: 'list', content: [
+            '평범한 카피 → 전환 카피',
+            '단순 설명 → 행동 유도 구조',
+            '일반 전략 → ROI 기반 의사결정 구조'
+          ]},
+          { type: 'paragraph', content: 'AI가 “답변 기계”가 아니라\n가상의 시니어 마케터/전문 파트너처럼 사고하도록 만드는 핵심 스위치입니다.' },
+          { type: 'header', content: '마케터 관점 베스트 프랙티스' },
+          { type: 'sub-header', content: '실전 세팅 포인트' },
+          { type: 'list', content: [
+            '경력 연차는 반드시 명시 (예: “10년 경력” / “15년 실무 경험”)',
+            '성과 중심 표현을 추가 (“conversion-focused”, “ROI-driven”)',
+            '타깃 명확화 (대표님인지, 실무자인지, 마케터 팀인지)',
+            '제약 조건 명시 (광고 예산, 제작 리소스, 일정의 촉박함)'
+          ]},
+          { type: 'paragraph', content: '이렇게 설정할수록 AI가 실제 실무자 기준 사고를 하게 됩니다.' }
         ]
       },
       {
@@ -678,13 +697,18 @@ export const CURRICULUM: Chapter[] = [
         title: '2. 단계별 사고 패턴',
         description: '복잡한 문제를 단계별로 논리적으로 해결하도록 유도하는 기법',
         blocks: [
-          { type: 'paragraph', content: '복잡한 문제를 단계별로 분해하여 해결하도록 유도합니다.' },
-          { type: 'header', content: '🔗 기본 구조' },
-          { type: 'code', content: '이것을 단계별로 해결해봅시다:\n\nStep 1: [첫 번째 행동]\nStep 2: [두 번째 행동]\n...\nFinal step: [결론]\n\n다음 단계로 넘어가기 전에 각 단계를 신중히 생각하세요.' },
-          { type: 'header', content: '🧮 수학 문제 해결 예제' },
-          { type: 'code', content: '이 문제를 단계별로 해결하세요:\n\n회사의 매출이 3년 동안 200만 달러에서 350만 달러로 성장했습니다.\n향후 5년 내에 1000만 달러에 도달하고자 합니다.\n필요한 연간 성장률은 얼마입니까?\n\n작업 과정을 보여주세요:\n1. 현재 성장률 계산\n2. 350만 달러에서 1000만 달러까지 필요한 성장 결정\n3. 5년 동안 필요한 연간 비율 계산\n4. 현재 비율과 비교\n5. 권장사항 제공' },
-          { type: 'header', content: '🐛 디버깅 예제' },
-          { type: 'code', content: '체계적인 접근으로 이 코드를 디버그하세요:\n\n```python\ndef process_orders(orders):\n	total = 0\n	for order in orders:\n    	if order.status == \'completed\':\n        	total += order.amount * order.quantity\n        	order.processed = True\n	return total / len(orders)\n\n단계별 디버깅 프로세스:\n1. 함수의 목적 파악\n2. 샘플 데이터로 로직 추적\n3. 잠재적 문제 식별:\n   o 엣지 케이스 (빈 리스트, null 값)\n   o 논리 오류\n   o 타입 불일치\n4. 설명과 함께 수정 제안\n5. 오류 처리가 포함된 개선된 버전 제공\n```' }
+          { type: 'paragraph', content: '복잡한 마케팅·비즈니스 문제를 “한 번에” 풀려고 하면\n늘 감으로 끝나고, 실행은 흐지부지되는 경우가 많습니다.\n\n단계별 사고 패턴은\n문제를 쪼개서 → 순서대로 생각하게 만들고 →\n마지막에는 숫자·행동·결론으로 떨어지게 만드는 프롬프트 구조입니다.' },
+          { type: 'header', content: '🔗 기본 구조 (마케터용 템플릿)' },
+          { type: 'paragraph', content: '목적:\n애매한 아이디어 나열이 아니라,\n“현재 상황 → 분석 → 인사이트 → 액션 플랜”까지 뽑아내기 위함입니다.' },
+          { type: 'code', content: '이 문제를 단계별로 해결해봅시다.\n\nStep 1: [현재 상황 정의 / 문제 명확화]\nStep 2: [데이터·사실 수집 및 정리]\nStep 3: [원인 가설 정리]\nStep 4: [우선순위가 높은 해결 방향 도출]\nFinal Step: [실행 계획 및 기대 성과 정리]\n\n각 단계마다, 다음 단계로 넘어가기 전에\n논리와 숫자를 한 번 더 점검해 주세요.' },
+          { type: 'header', content: '🧮 예제 1: 매출 목표 역산하기 (성장률 대신 “마케팅 관점”)' },
+          { type: 'paragraph', content: '상황 예시\n\n우리 브랜드의 연 매출이 3년 동안\n2억 → 3.5억으로 성장했습니다.\n향후 5년 안에 연 매출 10억을 만들고 싶습니다.\n\n어떤 마케팅·성장 전략이 필요할까요?\n\n이를 단계별 사고 패턴으로 유도하는 프롬프트는 이렇게 쓸 수 있습니다.' },
+          { type: 'code', content: '이 목표를 단계별로 분석하고, 실행 전략을 설계해주세요.\n\nStep 1: 과거 3년간 성장률을 계산하고, \n        성장의 주요 원인을 정리해주세요.\n        - 고객 수 증가 vs 객단가 상승 vs 재구매 증가 등으로 나누어 분석\n\nStep 2: 향후 5년 내 10억 매출을 달성하기 위해\n        필요한 \'대략적인 성장 곡선\'과 핵심 지표(구매자 수, 객단가, 재구매율)를 역산해주세요.\n\nStep 3: 위 지표를 달성하기 위한\n        마케팅 전략을 3가지 축으로 나누어 제안해주세요.\n        - 신규 유입 전략\n        - 객단가/번들 전략\n        - 리텐션/재구매 전략\n\nStep 4: 6개월 단위 실행 로드맵 형태로,\n        가장 임팩트 큰 액션부터 우선순위를 정리해주세요.\n\nFinal Step: 위 전략을 요약해서\n           대표나 경영진에게 보고하는 형식의 한 페이지 요약본으로 정리해주세요.' },
+          { type: 'header', content: '🐛 예제 2: 성과가 안 나오는 캠페인 디버깅' },
+          { type: 'paragraph', content: '개발 코드를 디버깅하듯이,\n광고·캠페인도 디버깅 구조로 접근할 수 있습니다.\n\n상황 예시\n\n특정 캠페인의 클릭수는 잘 나오는데,\n장바구니·구매 전환이 거의 없습니다.\n어디서 문제가 발생하는지 단계별로 진단해 주세요.\n\n프롬프트를 이렇게 설계합니다.' },
+          { type: 'code', content: '이 캠페인의 문제를 \'디버깅\'하듯이 단계별로 진단해주세요.\n\nStep 1: 캠페인의 목표와 핵심 KPI를 먼저 정의해주세요.\n        - 이 캠페인의 최종 목표는 무엇인지\n        - 현재 어떤 지표들이 잘 나오고, 어떤 지표들이 막혀 있는지 정리\n\nStep 2: 퍼널 단계별로 성과를 분해해서 살펴봐주세요.\n        - 노출 → 클릭 → 랜딩페이지 체류 → 장바구니 → 구매\n        - 각 단계에서 이탈률이 특히 높은 구간을 찾기\n\nStep 3: 잠재적인 문제 요인을 카테고리별로 정리해주세요.\n        - 타깃 설정 문제 (오디언스 미스매치)\n        - 크리에이티브/카피 문제 (메시지-오퍼 미스매치)\n        - 랜딩페이지 문제 (로딩 속도, 신뢰도, CTA, 정보 구조 등)\n        - 오퍼/가격/혜택 경쟁력 문제\n\nStep 4: 가장 영향력이 클 것 같은 원인 Top 3를 선정하고,\n        각각에 대해 구체적인 A/B 테스트 아이디어를 제안해주세요.\n        - 어떤 요소를, 어떻게 바꾸고, 무엇을 측정할지까지 포함\n\nFinal Step: 2주 이내에 실행 가능한\n           \'미니 실험 플랜\'을 만들어주세요.\n           - 실행 순서\n           - 필요한 리소스\n           - 기대 성과 및 판단 기준' },
+          { type: 'header', content: '정리' },
+          { type: 'paragraph', content: '2. 단계별 사고 패턴은\n“마케팅 문제를 쪼개서 실행 가능한 답까지 끌고 가는 틀”입니다.\n\n마케터 입장에선\n아이디어 브레인스토밍 → 액션 플랜/보고서 수준으로 끌어올리는 핵심 장치입니다.\n\n“Step 1~Final Step” 템플릿을\n매출 목표, 캠페인 진단, 고객 분석, 상세페이지 개선 등 어디든 그대로 이식해서 쓰실 수 있습니다.' }
         ]
       },
       {
@@ -692,11 +716,23 @@ export const CURRICULUM: Chapter[] = [
         title: '3. 구분자 패턴',
         description: '입력 데이터를 명확히 구분하여 AI의 혼란을 방지하는 기법',
         blocks: [
-          { type: 'paragraph', content: '지시사항과 데이터를 명확히 구분하여 혼동을 방지합니다.' },
-          { type: 'sub-header', content: '🔲 일반적인 구분자' },
-          { type: 'code', content: '# 삼중 따옴표\n"""\n지시사항\n"""\n\n# XML 스타일 태그\n<instructions>\n작업 내용\n</instructions>\n\n<data>\n입력 데이터\n</data>\n\n# 마크다운 구분선\n---\n### INSTRUCTIONS ###\n작업 설명\n\n### INPUT DATA ###\n처리할 데이터\n\n### EXPECTED OUTPUT ###\n출력 형식\n---\n\n# 커스텀 구분자\n=== START INSTRUCTIONS ===\n지시사항\n=== END INSTRUCTIONS ===\n\n=== START DATA ===\n데이터\n=== END DATA ===' },
-          { type: 'header', content: '📊 실전 활용 예제' },
-          { type: 'code', content: '<context>\n당신은 SaaS 제품에 대한 고객 피드백을 분석하고 있습니다.\n고충 사항(Pain points)과 기능 요청 식별에 집중하세요.\n</context>\n\n<instructions>\n1. 각 피드백 항목 분류\n2. 감정 점수 부여 (1-5)\n3. 핵심 주제 추출\n4. 빈도와 영향도에 따라 우선순위 지정\n</instructions>\n\n<feedback_data>\nCustomer 1: "The dashboard is confusing. Takes too long to find metrics."\nCustomer 2: "Love the automation features! Wish it had Slack integration."\nCustomer 3: "Pricing is too high for small teams."\nCustomer 4: "Dashboard needs better visualization options."\nCustomer 5: "Please add Slack notifications!"\n</feedback_data>\n\n<output_format>\n{\n  "categories": {\n	"UI/UX": [],\n	"Features": [],\n	"Pricing": []\n  },\n  "top_themes": [],\n  "priority_recommendations": []\n}\n</output_format>\n\n<language>\n분석은 한국어로, 기술 용어는 영어로 제공\n</language>' }
+          { type: 'header', content: '핵심 목적' },
+          { type: 'paragraph', content: '마케팅에서 AI를 쓰다 보면 가장 많이 발생하는 문제가 이것입니다.\n\n지시와 데이터가 섞여 AI가 엉뚱한 해석을 함\n전략 지시 → 경쟁사 정보 → 고객 데이터 → 요구 출력형식이 뒤섞임\n결과물이 매번 다르게 나와 자동화가 어려움\n\n구분자 패턴은 이를 해결합니다.\n\n👉 AI에게 “이건 명령”, “이건 데이터”, “이건 출력 형식”이라고 경계를 명확히 선언하는 구조입니다.' },
+          { type: 'sub-header', content: '🔲 마케터용 기본 구분자 구조 템플릿' },
+          { type: 'code', content: '✅ 가장 추천하는 마케팅 실전형 구조\n### ROLE ###\n당신의 역할 정의\n\n### OBJECTIVE ###\n이 작업의 목표\n\n### INSTRUCTIONS ###\n실행 규칙\n\n### INPUT DATA ###\n분석해야 할 데이터\n\n### CONSTRAINTS ###\n제약 조건\n\n### OUTPUT FORMAT ###\n출력 형식 규칙' },
+          { type: 'paragraph', content: '이 구조를 사용하면 AI가 감정적으로 흔들리지 않고 ‘기획자 모드’로 일관 유지합니다.' },
+          { type: 'sub-header', content: '🔲 마케터용 커스텀 구분자 (추천 세트)' },
+          { type: 'code', content: '① 전략용 프롬프트 구조\n=== START ROLE ===\n역할 설명\n=== END ROLE ===\n\n=== START TASK ===\n작업 목표\n=== END TASK ===\n\n=== START DATA ===\n제품/시장/고객 데이터\n=== END DATA ===\n\n=== START OUTPUT ===\n원하는 출력 형태\n=== END OUTPUT ===\n\n② 광고 캠페인/콘텐츠 기획 특화 버전\n<persona>\nAI 역할\n</persona>\n\n<goal>\n캠페인 목적\n</goal>\n\n<input_data>\n제품, 타깃, 시장 정보\n</input_data>\n\n<rules>\n톤앤매너, 제약 조건\n</rules>\n\n<output_format>\n결과물 구조\n</output_format>' },
+          { type: 'header', content: '📊 실전 마케터 활용 예제 (리뷰 분석 시나리오)' },
+          { type: 'code', content: '<context>\n당신은 SaaS / 화장품 / 이커머스 마케팅 전략가입니다.\n당신의 목표는 고객 리뷰에서\n이탈 원인과 구매 유도 포인트를 찾아내는 것입니다.\n</context>\n\n<instructions>\n다음 순서로 분석하세요.\n\n1. 리뷰를 유형별로 분류\n2. 각 리뷰에 감정 강도 점수 부여 (1-5)\n3. 반복되는 핵심 키워드 추출\n4. 매출에 가장 큰 영향을 주는 항목을 우선순위화\n</instructions>\n\n<feedback_data>\nCustomer 1: "The dashboard is confusing. Takes too long to find metrics."\nCustomer 2: "Love the automation features! Wish it had Slack integration."\nCustomer 3: "Pricing is too high for small teams."\nCustomer 4: "Dashboard needs better visualization options."\nCustomer 5: "Please add Slack notifications!"\n</feedback_data>\n\n<output_format>\n{\n  "main_pain_points": [],\n  "quick_wins": [],\n  "high_impact_actions": []\n}\n</output_format>\n\n<language>\n모든 결과는 한국어로 표기하되, 전문 용어는 영어로 유지\n</language>' },
+          { type: 'header', content: '🚀 마케터 관점 핵심 포인트' },
+          { type: 'list', content: [
+            '✅ 브랜드 컨설팅 보고서 품질이 일정해짐',
+            '✅ 기업별 AI 자동화 시스템 구축이 쉬워짐',
+            '✅ 결과물이 ‘감’이 아니라 템플릿화 가능해짐',
+            '특히 후기 데이터 분석, 고객 세분화, 경쟁사 분석, 정부지원 과제 보고서 자동화에 강력합니다.'
+          ]},
+          { type: 'tip', content: '실전 베스트 프랙티스 (마케터용):\n반드시 포함하면 좋은 구분 블록:\n- ROLE: AI 사고 방향 고정\n- OBJECTIVE: 방향 이탈 방지\n- INPUT DATA: 데이터와 지시 분리\n- OUTPUT FORMAT: 결과물 표준화' }
         ]
       },
       {
@@ -704,13 +740,16 @@ export const CURRICULUM: Chapter[] = [
         title: '4. 제약 조건 설정',
         description: 'AI가 하지 말아야 할 것과 지켜야 할 규칙 설정하기',
         blocks: [
-          { type: 'paragraph', content: '명확한 제약 조건을 설정하여 원하는 범위 내에서 응답을 받습니다.' },
+          { type: 'header', content: '제약 조건이란?' },
+          { type: 'paragraph', content: '마케터 관점에서 제약 조건은 곧 브랜드 통제권 + 결과물 품질 관리 장치입니다.\n아무 때나 훈수 두는 ‘지식백과형 답변’ ❌\n브랜드 톤, 타깃, 목표를 반영한 ‘전략 산출물’ ✅\n를 가르는 기준이 바로 제약 조건입니다.' },
           { type: 'sub-header', content: '🚫 부정 제약 (Negative Constraints)' },
-          { type: 'code', content: '하지 마세요:\n- 설명 없이 기술 전문 용어 사용\n- 500단어 초과\n- 개인적인 의견 포함\n- 가정을 명시하지 않고 추측\n- 사용 중단된 메서드나 라이브러리 사용' },
+          { type: 'paragraph', content: '“이건 절대 하지 마라”를 미리 못 박아두는 장치' },
+          { type: 'code', content: '하지 마세요:\n- 타깃 고객을 특정하지 않은 일반론적 마케팅 조언\n- 브랜드에서 사용하지 않는 말투, 반말, 과장된 자극적 표현\n- \'열심히\', \'성공\', \'브랜딩이 중요합니다\' 같은 추상적인 문장 남발\n- 내가 제공하지 않은 데이터나 경쟁사 정보를 마음대로 추측해서 인용\n- 법적·광고 심의에 문제가 될 만한 표현(효능 과장, 의학적 표현 등)\n- 1,000자 이상 장황한 설명 (핵심이 흐려지는 분량)\n- 액션 플랜 없이 개념 설명만 하고 끝내기' },
           { type: 'sub-header', content: '✅ 긍정 제약 (Positive Constraints)' },
-          { type: 'code', content: '반드시:\n- 작동하는 코드 예제 제공\n- 오류 처리 포함\n- 복잡한 로직에 주석 추가\n- Python 3.10+ 기능만 사용\n- PEP 8 스타일 가이드 준수\n- 단위 테스트 포함' },
-          { type: 'header', content: '⚖️ 균형잡힌 제약 설정 예제' },
-          { type: 'code', content: '사용자 등록을 위한 REST API 엔드포인트를 생성하세요.\n\n요구사항:\n✅ 필수 사항:\n- 입력 검증 (이메일, 비밀번호 강도)\n- 비밀번호 해싱 (bcrypt)\n- 고유 이메일 제약\n- JWT 토큰 반환\n- 적절한 HTTP 상태 코드\n- 속도 제한\n\n❌ 금지 사항:\n- 평문 비밀번호 저장\n- 응답에 민감한 데이터 반환\n- SQL 인젝션 허용\n- 상태 변경 작업에 GET 사용\n- 100줄 이상의 코드\n\n⚠️ 고려사항:\n- 데이터베이스: PostgreSQL\n- 프레임워크: FastAPI\n- 목표 응답 시간 < 200ms\n- 예상 부하: 1000 요청/분\n\n💡 있으면 좋은 사항:\n- 이메일 인증 플로우\n- OAuth 통합 준비\n- Swagger 문서화\n- 로깅 설정' }
+          { type: 'paragraph', content: '“이 건 꼭 지켜라”를 명령하는 장치' },
+          { type: 'code', content: '반드시:\n- 특정 타깃을 전제로 작성할 것\n  (예: 30대 워킹맘, 민감성 피부 직장인, 영어 울렁증 직장인 등)\n- 브랜드의 톤앤매너를 반영할 것\n  (예: 담백하고 논리적인 톤, 과장 없는 프리미엄 톤 등)\n- 모든 제안은 \'매출/전환/재구매\' 중 최소 1개 이상과 연결해서 설명할 것\n- 실행 가능한 액션 아이템으로 마무리할 것\n  (예: \'광고 세팅 시 이렇게 집행\', \'상세페이지 섹션 이렇게 구성\')\n- 내가 제공한 데이터, 인사이트를 우선적으로 활용할 것\n- 글의 구조를 명확히 나눌 것\n  (상황 분석 → 문제 정의 → 전략 제안 → 우선순위 → 액션 플랜)\n- 분량은 700~1,200자 사이로 유지하고, 불필요한 수식어는 줄일 것' },
+          { type: 'header', content: '[작업 요청] 예시' },
+          { type: 'code', content: '다음 조건에 맞춰 ‘신제품 론칭 캠페인 전략’을 설계해주세요.\n\n[제품 정보]\n- 카테고리: 저자극 클렌저\n- 타깃: 20~30대 민감성 피부 여성\n- 판매 채널: 자사몰 + 인스타그램\n- 목표: 론칭 첫 달 매출 5,000만원\n\n[✅ 필수 조건]\n반드시 포함해야 할 요소:\n- 메인 캠페인 콘셉트 1안 이상\n- 핵심 메시지(메인 카피 + 서브 카피)\n- 퍼널 구조 설계\n  (인지 → 관심 → 탐색 → 전환 → 재참여)\n- 인스타그램 중심 콘텐츠 전략\n  (릴스, 스토리, 피드 포스트 최소 3종)\n- 전환 유도를 위한 오퍼 설계\n  (체험, 샘플, 한정 프로모션 등)\n- KPI 지표 제시\n  (도달, 클릭, 전환율, 구매 전환 목표 수치)\n\n[❌ 금지 조건]\n절대 하지 말아야 할 것:\n- “바를수록 좋아집니다”, “기적의”, “완벽한” 등 과장 표현\n- 의학적 표현, 치료 효과 암시\n- 막연한 브랜딩 이야기만 하고\n  실제 실행 구조 없이 끝내는 방식\n- 타깃이 불분명한 ‘모든 사람 대상’ 전략\n\n[⚠️ 고려해야 할 사항]\n- 광고 심의 리스크 최소화\n- 예산 1,000만원 이내 집행\n- 내부 인력 2명 기준 운영 가능해야 함\n- 콘텐츠 제작은 스마트폰 촬영 기반으로 설계\n\n[💡 있으면 좋은 요소]\n가능하다면 포함:\n- 바이럴 확산을 위한 참여형 구조\n  (챌린지, 공유 이벤트 등)\n- 인플루언서 협업 구조\n- 론칭 후 2차 판매로 이어지는 리텐션 장치 설계\n\n[출력 조건]\n아래 포맷을 반드시 지켜서 출력하세요:\n\n## 1. 캠페인 콘셉트\n## 2. 퍼널 전략 구조\n## 3. 콘텐츠 기획안\n## 4. 전환 오퍼 설계\n## 5. KPI 목표\n## 6. 실행 체크리스트' }
         ]
       },
       {
@@ -718,27 +757,17 @@ export const CURRICULUM: Chapter[] = [
         title: '5. 출력 제어 패턴',
         description: '답변의 길이, 포맷, 스타일을 정밀하게 제어하기',
         blocks: [
-          { type: 'sub-header', content: '📋 구조화된 출력 템플릿' },
-          { type: 'code', content: 'Analyze the code and provide output in this exact format:\n코드를 분석하고 정확히 이 형식으로 출력을 제공하세요:\n\n## Code Review Summary\n- **Overall Quality**: [Score/10]\n- **Complexity**: [Low/Medium/High]\n- **Maintainability**: [Score/10]\n\n## Issues Found\n| Priority | Type | Line | Description | Suggestion |\n|----------|------|------|-------------|------------|\n| High 	|  	|  	|         	|        	|\n| Medium   |  	|  	|         	|        	|\n| Low  	|  	|  	|         	|        	|\n\n## Detailed Analysis\n\n### 1. Strengths\n- Bullet point 1\n- Bullet point 2\n\n### 2. Areas for Improvement\n- Issue 1: [Description]\n  ```python\n  # Current code\n  ```\n  ```python\n  # Suggested improvement\n  ```\n\n### 3. Performance Considerations\n·  	Point 1\n·  	Point 2\n\n### Action Items\n☐     	Critical: [Action]\n☐     	Important: [Action]\n☐     	Nice-to-have: [Action]\n\n### Metrics\n{\n  "lines_of_code": 0,\n  "cyclomatic_complexity": 0,\n  "test_coverage_estimate": "0%",\n  "security_score": "A-F"\n}' },
-          { type: 'sub-header', content: '🔄 조건부 출력' },
-          { type: 'code', content: '"""\nAnalyze the user\'s request and respond accordingly:\n사용자의 요청을 분석하고 그에 따라 응답하세요:\n\nIF the request is about debugging:\n  - Identify the error type\n  - Explain the root cause\n  - Provide step-by-step fix\n  - Show corrected code\n  - Add test cases\n\nELIF the request is about optimization:\n  - Measure current performance\n  - Identify bottlenecks\n  - Suggest optimizations with trade-offs\n  - Provide benchmarks\n\nELIF the request is about refactoring:\n  - Identify code smells\n  - Apply appropriate design patterns\n  - Show before/after comparison\n  - Explain benefits\n\nELSE:\n  - Ask for clarification\n  - Provide general guidance\n\n요청이 디버깅에 관한 경우:\n  - 오류 유형 식별\n  - 근본 원인 설명\n  - 단계별 수정 제공\n  - 수정된 코드 표시\n  - 테스트 케이스 추가\n\n요청이 최적화에 관한 경우:\n  - 현재 성능 측정\n  - 병목 현상 식별\n  - 트레이드오프와 함께 최적화 제안\n  - 벤치마크 제공\n\n요청이 리팩토링에 관한 경우:\n  - 코드 스멜 식별\n  - 적절한 디자인 패턴 적용\n  - 전후 비교 표시\n  - 이점 설명\n\n그 외:\n  - 명확한 설명 요청\n  - 일반적인 지침 제공\n"""' },
+          { type: 'header', content: '출력 제어란?' },
+          { type: 'paragraph', content: '답변의 길이, 포맷, 스타일을 내가 원하는 틀 안에 가두는 기술\n“매번 말투가 바뀌는 AI”를 “항상 같은 형식과 퀄리티로 결과물을 뽑는 비서”로 만드는 스위치입니다.' },
+          { type: 'sub-header', content: '📋 1) 구조화된 출력 템플릿 (마케터 버전 예시)' },
+          { type: 'code', content: '예시: “마케팅 전략 리뷰 리포트” 출력 템플릿\n아래 형식을 반드시 그대로 지켜서 출력하세요:\n\n## 1. Summary (요약)\n- 현재 상황 한 줄 요약:\n- 가장 큰 문제 1줄 요약:\n- 가장 먼저 해야 할 액션 1줄 요약:\n\n## 2. KPI 스냅샷\n| 구분           | 현재 값 | 목표 값 | 주석 |\n|----------------|---------|---------|------|\n| 매출           |         |         |      |\n| 전환율(CVR)    |         |         |      |\n| CAC            |         |         |      |\n| 재구매율       |         |         |      |\n\n## 3. Funnel 진단\n| 단계                | 지표/상태                         | 문제점 요약                     |\n|---------------------|-----------------------------------|---------------------------------|\n| 인지도 (Reach)      |                                   |                                 |\n| 유입 (Click/Visit)  |                                   |                                 |\n| 전환 (Purchase)     |                                   |                                 |\n| 유지 (Retention)    |                                   |                                 |\n\n## 4. 핵심 인사이트 (Top 3)\n1. [인사이트 1]\n2. [인사이트 2]\n3. [인사이트 3]\n\n## 5. 액션 플랜 (우선순위 순)\n| 우선순위 | 액션 항목                      | 담당/역할     | 예상 임팩트 | 실행 기간 |\n|----------|--------------------------------|--------------|-------------|-----------|\n| High     |                                |              |             |           |\n| Medium   |                                |              |             |           |\n| Low      |                                |              |             |           |\n\n## 6. 메시지/크리에이티브 방향 제안\n- 핵심 메시지 컨셉:\n- Hook 문장 예시 2~3개:\n- 권장 톤앤매너:\n\n## 7. Metrics (JSON 형식)\n{\n  "current_revenue": 0,\n  "target_revenue": 0,\n  "current_cvr": 0,\n  "target_cvr": 0,\n  "estimated_timeline_weeks": 0\n}' },
+          { type: 'code', content: '예시: “상세페이지 진단 리포트” 템플릿\n아래 형식으로만 답변하세요:\n\n## 1. 한 줄 평가\n- 이 상세페이지의 한 줄 요약 평가:\n\n## 2. 구조 진단\n| 섹션          | 유무 | 평가 | 코멘트 |\n|---------------|------|------|--------|\n| Hook 섹션     |      |      |        |\n| 공감/문제 제기 |      |      |        |\n| 솔루션 제시   |      |      |        |\n| 제품 USP      |      |      |        |\n| 사회적 증거(후기 등) | |    |        |\n| 혜택/구성 안내 |      |      |        |\n| CTA 섹션      |      |      |        |\n\n## 3. 강점 (Strengths)\n- 강점 1\n- 강점 2\n\n## 4. 개선 포인트 (Areas for Improvement)\n- 개선 포인트 1 (구체적인 수정 제안 포함)\n- 개선 포인트 2\n\n## 5. 우선순위 액션 3가지\n1. [High] 액션 내용\n2. [Medium] 액션 내용\n3. [Low] 액션 내용' },
+          { type: 'sub-header', content: '🔄 2) 조건부 출력 패턴' },
+          { type: 'code', content: '사용자의 요청을 분석하고 그에 따라 아래 조건에 맞춰 응답하세요:\n\nIF 요청이 "광고 성과 분석"에 관한 경우:\n  - 현재 성과를 KPI 표로 요약\n  - 퍼널 단계별 문제 구간 식별\n  - 원인에 대한 가설 3가지 제시\n  - 캠페인/세그먼트 단위의 개선 액션 제안\n  - 테스트해야 할 A/B 실험 3가지 제안\n\nELIF 요청이 "상세페이지/랜딩페이지 개선"에 관한 경우:\n  - 페이지를 5~7개 섹션으로 나누어 구조 분석\n  - Hook, 공감, 솔루션, 신뢰, CTA 관점에서 평가\n  - 부족한 요소를 구체적으로 지적\n  - 섹션별로 대체 카피/구조 제안\n  - 우선 수정해야 할 Top 3만 명시\n\nELIF 요청이 "콘텐츠/캠페인 아이디어"에 관한 경우:\n  - 타깃과 목적을 먼저 재정의\n  - 메인 콘셉트 1~2개 제안\n  - 구체적인 콘텐츠 기획안(예: 인스타 7일 플랜, 릴스 5편 기획 등)\n  - 각 콘텐츠별 Hook + 주제 + CTA 제안\n\nELSE:\n  - 요청이 불명확한 부분에 대해 2~3가지 명확한 질문\n  - 그 전제에서 선택 가능한 방향성 옵션 제안' },
           { type: 'header', content: '🎯 중급 패턴 조합 예제' },
-          { type: 'paragraph', content: '여러 패턴을 조합하여 강력한 프롬프트를 만들 수 있습니다:' },
-          { type: 'code', content: '"""\n<role>\nYou are a Senior DevOps Engineer specializing in Kubernetes and CI/CD pipelines.\nYou have 10+ years of experience in cloud-native architectures.\n</role>\n\n<context>\nOur startup is migrating from monolith to microservices.\nCurrent stack: Python/Django monolith, PostgreSQL, Redis\nTarget: Kubernetes cluster on AWS EKS\nTeam size: 5 developers, 1 DevOps (you)\nTimeline: 3 months\n</context>\n\n<task>\nCreate a migration plan using step-by-step approach:\n</task>\n\n<constraints>\nMUST:\n- Zero downtime deployment\n- Maintain data consistency\n- Rollback capability\n- Cost < $5000/month\n\nMUST NOT:\n- Require more than 2 developers at once\n- Break existing APIs\n- Lose any customer data\n</constraints>\n\n<output_format>\n## Phase 1: Preparation (Week 1-2)\n- [ ] Task with owner and deadline\n- [ ] Task with owner and deadline\n\n## Phase 2: Migration (Week 3-8)\n[Detailed tasks]\n\n## Phase 3: Validation (Week 9-10)\n[Testing and validation steps]\n\n## Phase 4: Cutover (Week 11-12)\n[Final migration steps]\n\n## Risk Matrix\n| Risk | Probability | Impact | Mitigation |\n|------|------------|---------|------------|\n\n## Cost Breakdown\n| Service | Monthly Cost | Justification |\n|---------|-------------|---------------|\n\n## Success Metrics\n- Metric 1: Target value\n- Metric 2: Target value\n</output_format>\n\nPlease think through each phase carefully, considering dependencies and risks.\n각 단계를 신중히 생각하고, 종속성과 위험을 고려하세요.\n"""' },
-          { type: 'header', content: '📚 실습 과제' },
-          { type: 'sub-header', content: '과제 1: 역할 부여 마스터' },
-          { type: 'paragraph', content: '3가지 다른 역할로 같은 코드를 리뷰하게 하고 차이점을 분석하세요: - 보안 전문가 - 성능 최적화 전문가 - 주니어 개발자 멘토' },
-          { type: 'sub-header', content: '과제 2: Chain-of-Thought 적용' },
-          { type: 'paragraph', content: '복잡한 비즈니스 문제를 5단계 이상으로 분해하여 해결하세요.' },
-          { type: 'sub-header', content: '과제 3: 제약 조건 실험' },
-          { type: 'paragraph', content: '같은 작업에 다른 제약 조건을 적용하여 결과의 차이를 비교하세요.' },
-          { type: 'header', content: '💡 프로 팁' },
-          { type: 'list', content: [
-            '1. 패턴 조합: 단일 패턴보다 여러 패턴을 조합하면 더 강력합니다',
-            '2. 반복 실험: 같은 패턴도 문구를 조금씩 바꿔가며 최적화하세요',
-            '3. 도메인 특화: 업무 도메인에 맞는 커스텀 패턴을 개발하세요',
-            '4. 문서화: 효과적인 프롬프트는 팀과 공유하고 재사용하세요'
-          ]}
+          { type: 'paragraph', content: '주제: 신제품 상세페이지 기획 자동 프롬프트\n이 예제는 역할 부여 + 구분자 + 제약 조건 + 출력 제어를 한 번에 결합한 구조입니다.' },
+          { type: 'code', content: '<role>\n당신은 10년 경력의 이커머스 전문 카피라이터이자\n퍼포먼스 마케터입니다.\n주 업무는 전환율 높은 상세페이지 기획과\n구매 심리를 설계하는 것입니다.\n</role>\n\n<context>\n아래 제품에 대한 ‘전환 최적화형 상세페이지 구조’를 만들고자 합니다.\n</context>\n\n<product_info>\n- 제품 카테고리: 약산성 클렌저\n- 타깃 고객: 20~30대 민감성 피부 여성\n- 판매 채널: 네이버 스마트스토어\n- 경쟁 환경: 저가 제품이 많고, 차별화 어려움\n</product_info>\n\n<task>\n이 제품의 구매 전환율을 높일 수 있도록\n상세페이지의 “전체 구조 + 섹션별 메시지 설계”를 진행하세요.\n</task>\n\n<constraints>\n✅ MUST:\n- 첫 화면에서 시선 끄는 Hook 설계\n- 공감 → 문제 제기 → 해결책 제시 구조 유지\n- 제품 USP를 최소 3가지 이상 명확히 표현\n- 불안 해소를 위한 신뢰 요소 삽입\n  (성분, 테스트, 후기, 보증 등)\n- 구매 욕구를 자극하는 오퍼 설계\n\n❌ MUST NOT:\n- 의학적 표현 사용\n- 과장된 효과 표현\n- “이 제품 하나면 끝” 식의 허위 과장 표현\n- 막연한 감성 브랜딩 이야기만 반복\n\n⚠️ CONSIDER:\n- 모바일 화면 기준 구성\n- 빠른 스크롤 환경에서 핵심만 보이게 설계\n- 자사몰이 아닌 마켓 플랫폼 UI 제약\n\n💡 OPTIONAL:\n- 경쟁 제품과 차이를 보여주는 비교 영역\n- 구매를 미루지 않게 만드는 행동 유도 장치\n</constraints>\n\n<output_format>\n아래 형식으로만 출력하세요:\n\n## 1. 상세페이지 전체 흐름 구조\n\n## 2. 섹션별 기획안\n| 섹션 | 목적 | 핵심 메시지 | 비주얼 방향 |\n|------|------|------------|-------------|\n\n## 3. Important Hooks (상단 카피 후보 3개)\n\n## 4. 설득 요소 설계\n- 사회적 증거(후기, 인증 등)\n- 불안 해소 장치\n- 혜택 구조\n\n## 5. 전환 강화 장치\n- CTA 구조\n- 한정 요소 설계\n\n## 6. 즉시 실행 체크리스트\n☐ 이미지 제작\n☐ 카피 작성\n☐ 경쟁사 비교표 제작\n☐ 후기 수집 설계\n</output_format>' },
+          { type: 'tip', content: '이 구조를 쓰면 AI는 자동으로: ⛔ 엉뚱한 이야기 제거, ✅ 항상 “전환 중심 사고” 유지, ✅ 결과물을 바로 실무에 쓸 수 있는 포맷으로 고정 출력합니다.' }
         ]
       }
     ]
