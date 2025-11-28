@@ -653,11 +653,11 @@ export const CURRICULUM: Chapter[] = [
     sections: [
       {
         id: 'inter-1',
-        title: '1. 역할 부여 패턴 (Marketing-Oriented Role Prompting)',
+        title: '1. 역할 부여 패턴',
         description: 'AI를 가상의 "전문 포지션 인재"로 설정하여 콘텐츠 퀄리티와 전략 밀도를 높이는 기법',
         blocks: [
           { type: 'header', content: '핵심 목적' },
-          { type: 'paragraph', content: 'AI를 단순한 도구가 아닌 **가상의 ‘전문 포지션 인재’**로 설정하여\n콘텐츠 퀄리티, 설득력, 전략 밀도를 한 단계 끌어올리는 방식입니다.' },
+          { type: 'paragraph', content: 'AI를 단순한 도구가 아닌 가상의 ‘전문 포지션 인재’로 설정하여\n콘텐츠 퀄리티, 설득력, 전략 밀도를 한 단계 끌어올리는 방식입니다.' },
           { type: 'list', content: [
             '브랜드 톤앤매너 고정',
             '타깃 오디언스 맞춤 메시지 정밀도 향상',
